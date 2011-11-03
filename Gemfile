@@ -7,4 +7,5 @@ gem 'mysql2'
 
 group :test do
   gem 'cucumber-rails'
+  gem 'database_cleaner'
 end
