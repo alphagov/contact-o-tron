@@ -9,4 +9,5 @@ gem 'mysql2'
 group :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
 end
