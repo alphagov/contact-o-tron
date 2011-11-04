@@ -1,4 +1,4 @@
 class ContactsController < InheritedResources::Base
   respond_to :html
-  actions :index
+  actions :index, :show
 end
