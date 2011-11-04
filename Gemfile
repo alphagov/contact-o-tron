@@ -2,6 +2,7 @@ source :rubygems
 
 gem 'rails', '3.1.1'
 
+gem 'inherited_resources'
 gem 'jquery-rails'
 gem 'mysql2'
 
