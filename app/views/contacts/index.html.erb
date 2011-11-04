@@ -1,0 +1,7 @@
+<h1>Listing contacts</h1>
+
+<ul id="contacts">
+  <% for contact in @contacts.in_alphabetical_order %>
+    <li><%= link_to contact.name, contact_path(contact) %></li>
+  <% end %>
+</ul>
