@@ -59,6 +59,8 @@ GEM
       factory_girl (~> 2.2.0)
       railties (>= 3.0.0)
     ffi (1.0.9)
+    formtastic (2.0.2)
+      rails (~> 3.0)
     gherkin (2.6.2)
       json (>= 1.4.6)
     has_scope (0.5.1)
@@ -136,6 +138,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   factory_girl_rails
+  formtastic
   inherited_resources
   jquery-rails
   mysql2
