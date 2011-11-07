@@ -7,6 +7,10 @@ gem 'inherited_resources'
 gem 'jquery-rails'
 gem 'mysql2'
 
+group :development do
+  gem 'nokogiri'
+end
+
 group :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'

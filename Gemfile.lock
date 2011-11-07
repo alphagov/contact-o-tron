@@ -142,4 +142,5 @@ DEPENDENCIES
   inherited_resources
   jquery-rails
   mysql2
+  nokogiri
   rails (= 3.1.1)
