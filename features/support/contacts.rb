@@ -27,3 +27,8 @@ end
 def check_contact_details_appear(contact)
   check_contact_name_appears contact.name
 end
+
+def enter_contact_details(name)
+  fill_in 'Name', :with => name
+  click_button 'Create Contact'
+end

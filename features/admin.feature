@@ -9,3 +9,7 @@ Feature: Administering contacts
   Scenario: View a contact
     Given a contact exists
     Then I should be able to see the contact's details
+
+  Scenario: Create a contact
+    When I enter the details for a new contact
+    Then the contact should be created
