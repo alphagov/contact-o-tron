@@ -26,3 +26,13 @@ Then /^the contact should be created$/ do
   visit contact_path(contact)
   check_contact_details_appear contact
 end
+
+When /^I edit the contact's name$/ do
+  visit edit_contact_path(@contact)
+  update_contact_name 'Updated name'
+end
+
+Then /^the contact's name should change$/ do
+  visit contact_path(@contact)
+  check_contact_name_appears 'Updated name'
+end

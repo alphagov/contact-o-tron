@@ -32,3 +32,8 @@ def enter_contact_details(name)
   fill_in 'Name', :with => name
   click_button 'Create Contact'
 end
+
+def update_contact_name(name)
+  fill_in 'Name', :with => name
+  click_button 'Update Contact'
+end

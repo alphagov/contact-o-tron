@@ -13,3 +13,8 @@ Feature: Administering contacts
   Scenario: Create a contact
     When I enter the details for a new contact
     Then the contact should be created
+
+  Scenario: Edit a contact's name
+    Given a contact exists
+    When I edit the contact's name
+    Then the contact's name should change
