@@ -36,3 +36,13 @@ Then /^the contact's name should change$/ do
   visit contact_path(@contact)
   check_contact_name_appears 'Updated name'
 end
+
+When /^I edit the contact's postal address$/ do
+  visit edit_contact_path(@contact)
+  update_contact_postal_address "Updated\npostal\naddress"
+end
+
+Then /^the contact's postal address should change$/ do
+  visit contact_path(@contact)
+  check_contact_postal_address_appears "Updated\npostal\naddress"
+end

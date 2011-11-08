@@ -18,3 +18,8 @@ Feature: Administering contacts
     Given a contact exists
     When I edit the contact's name
     Then the contact's name should change
+
+  Scenario: Edit a contact's postal address
+    Given a contact exists
+    When I edit the contact's postal address
+    Then the contact's postal address should change

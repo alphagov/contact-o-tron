@@ -52,3 +52,8 @@ def update_contact_name(name)
   fill_in 'Name', :with => name
   click_button 'Update Contact'
 end
+
+def update_contact_postal_address(postal_address)
+  fill_in 'Postal address', :with => postal_address
+  click_button 'Update Contact'
+end
