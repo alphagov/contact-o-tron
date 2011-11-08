@@ -23,3 +23,8 @@ Feature: Administering contacts
     Given a contact exists
     When I edit the contact's postal address
     Then the contact's postal address should change
+
+  Scenario: Edit a contact's phone number
+    Given a contact exists
+    When I edit the contact's phone number
+    Then the contact's phone number should change

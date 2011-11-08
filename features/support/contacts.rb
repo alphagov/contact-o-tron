@@ -77,3 +77,23 @@ def update_contact_postal_address(postal_address)
   fill_in 'Postal address', :with => postal_address
   click_button 'Update Contact'
 end
+
+def within_phone_number(kind, label, &block)
+  within :xpath, XPath.generate { |x| x.descendant(:div)[XPath::HTML.select('Kind', :selected => kind) && XPath::HTML.fillable_field('Label', :with => label)] }, &block
+end
+
+def fill_in_phone_number(kind, label, value)
+  select kind, :from => 'Kind'
+  fill_in 'Label', :with => label
+  fill_in 'Value', :with => value
+end
+
+def update_contact_phone_number(kind, label, value)
+  within_fieldset 'Phone numbers' do
+    within_phone_number kind, label do
+      fill_in_phone_number kind, label, value
+    end
+  end
+
+  click_button 'Update Contact'
+end

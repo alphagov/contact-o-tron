@@ -1,5 +1,16 @@
 <%= form.input :name %>
 <%= form.input :postal_address %>
+
+<%= form.inputs 'Phone numbers' do %>
+  <%= form.semantic_fields_for :phone_numbers do |phone_number| %>
+    <div>
+      <%= phone_number.input :kind, :collection => PhoneNumber::KINDS %>
+      <%= phone_number.input :label %>
+      <%= phone_number.input :value %>
+    </div>
+  <% end %>
+<% end %>
+
 <%= form.input :email_address %>
 <%= form.input :website_url %>
 <%= form.input :opening_hours %>

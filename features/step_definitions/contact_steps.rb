@@ -46,3 +46,13 @@ Then /^the contact's postal address should change$/ do
   visit contact_path(@contact)
   check_contact_postal_address_appears "Updated\npostal\naddress"
 end
+
+When /^I edit the contact's phone number$/ do
+  visit edit_contact_path(@contact)
+  update_contact_phone_number 'minicom', 'Minicom', '0845 123 1234'
+end
+
+Then /^the contact's phone number should change$/ do
+  visit contact_path(@contact)
+  check_contact_phone_number_appears 'minicom', 'Minicom', '0845 123 1234'
+end
