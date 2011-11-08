@@ -28,3 +28,8 @@ Feature: Administering contacts
     Given a contact exists
     When I edit the contact's phone number
     Then the contact's phone number should change
+
+  Scenario: Add a phone number to a contact
+    Given a contact exists
+    When I add a phone number to the contact
+    Then the contact's details should include the phone number

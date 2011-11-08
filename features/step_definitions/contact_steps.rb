@@ -56,3 +56,13 @@ Then /^the contact's phone number should change$/ do
   visit contact_path(@contact)
   check_contact_phone_number_appears 'minicom', 'Minicom', '0845 123 1234'
 end
+
+When /^I add a phone number to the contact$/ do
+  visit edit_contact_path(@contact)
+  add_contact_phone_number 'phone', 'Hotline', '020 725 3490'
+end
+
+Then /^the contact's details should include the phone number$/ do
+  visit contact_path(@contact)
+  check_contact_phone_number_appears 'phone', 'Hotline', '020 725 3490'
+end

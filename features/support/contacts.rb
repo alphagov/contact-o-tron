@@ -97,3 +97,13 @@ def update_contact_phone_number(kind, label, value)
 
   click_button 'Update Contact'
 end
+
+def add_contact_phone_number(kind, label, value)
+  within_fieldset 'Phone numbers' do
+    within :xpath, './/div[last()]' do
+      fill_in_phone_number kind, label, value
+    end
+  end
+
+  click_button 'Update Contact'
+end
