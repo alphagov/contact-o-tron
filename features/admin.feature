@@ -33,3 +33,8 @@ Feature: Administering contacts
     Given a contact exists
     When I add a phone number to the contact
     Then the contact's details should include the phone number
+
+  Scenario: Remove a phone number from a contact
+    Given a contact exists
+    When I remove a phone number from the contact
+    Then the contact's details should not include the phone number

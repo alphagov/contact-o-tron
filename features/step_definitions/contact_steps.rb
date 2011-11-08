@@ -62,7 +62,17 @@ When /^I add a phone number to the contact$/ do
   add_contact_phone_number 'phone', 'Hotline', '020 725 3490'
 end
 
-Then /^the contact's details should include the phone number$/ do
+When /^I remove a phone number from the contact$/ do
+  visit edit_contact_path(@contact)
+  remove_contact_phone_number 'minicom', 'Minicom', '0845 300 1998'
+end
+
+Then /^the contact's details should (not )?include the phone number$/ do |should_not|
   visit contact_path(@contact)
-  check_contact_phone_number_appears 'phone', 'Hotline', '020 725 3490'
+
+  if should_not
+    check_contact_phone_number_does_not_appear 'minicom', 'Minicom', '0845 300 1998'
+  else
+    check_contact_phone_number_appears 'phone', 'Hotline', '020 725 3490'
+  end
 end

@@ -51,6 +51,10 @@ def check_contact_phone_number_appears(kind, label, value)
   end
 end
 
+def check_contact_phone_number_does_not_appear(kind, label, value)
+  assert !has_selector?(:xpath, XPath.generate { |x| x.descendant(:p)[XPath::HTML.content(value)] })
+end
+
 def check_contact_details_appear(contact)
   check_contact_name_appears contact.name
   check_contact_postal_address_appears contact.postal_address
@@ -102,6 +106,16 @@ def add_contact_phone_number(kind, label, value)
   within_fieldset 'Phone numbers' do
     within :xpath, './/div[last()]' do
       fill_in_phone_number kind, label, value
+    end
+  end
+
+  click_button 'Update Contact'
+end
+
+def remove_contact_phone_number(kind, label, value)
+  within_fieldset 'Phone numbers' do
+    within_phone_number kind, label do
+      fill_in_phone_number '', '', ''
     end
   end
 
