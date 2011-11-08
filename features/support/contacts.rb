@@ -11,9 +11,18 @@ def check_contacts_appear_in_order(contacts)
 end
 
 def create_contact
+  phone_numbers = [
+    { kind: 'phone',    label: 'Defra Helpline',  value: '0845 933 5577' },
+    { kind: 'minicom',  label: 'Minicom',         value: '0845 300 1998' },
+    { kind: 'fax',                                value: '020 7238 2188' }
+  ].map do |attributes|
+    Factory.build :phone_number, attributes
+  end
+
   Factory.create :contact,
     :name           => 'Department for Environment, Food and Rural Affairs',
     :postal_address => "Customer Contact Unit\nEastbury House\n30-34 Albert Embankment\nLondon\nSE1 7TL",
+    :phone_numbers  => phone_numbers,
     :email_address  => 'helpline@defra.gsi.gov.uk',
     :website_url    => 'http://www.defra.gov.uk/',
     :opening_hours  => 'Monday to Friday 8.00 am to 6.00 pm (helpline)'
@@ -35,9 +44,20 @@ def check_contact_postal_address_appears(postal_address)
   end
 end
 
+def check_contact_phone_number_appears(kind, label, value)
+  within :xpath, XPath.generate { |x| x.descendant(:p)[XPath::HTML.content(value)] } do
+    assert has_content? kind.humanize
+    assert has_content? label if label.present?
+  end
+end
+
 def check_contact_details_appear(contact)
   check_contact_name_appears contact.name
   check_contact_postal_address_appears contact.postal_address
+  contact.phone_numbers.each do |phone_number|
+    check_contact_phone_number_appears phone_number.kind, phone_number.label, phone_number.value
+  end
+
   check_attribute_appears 'Email address', contact.email_address
   check_attribute_appears 'Website URL', contact.website_url
   check_attribute_appears 'Opening hours', contact.opening_hours
