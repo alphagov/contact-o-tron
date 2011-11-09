@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ContactOTron</title>
-  <%= stylesheet_link_tag    "application" %>
+  <title>Contact-o-tron</title>
+  <%= stylesheet_link_tag '/stylesheets/formtastic.css', '/stylesheets/formtastic_changes.css' %>
   <%= javascript_include_tag "application" %>
+  <meta name="x-section-name" content="Contact-o-tron" />
+  <meta name="x-section-link" content="contact-o-tron" />
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <div id="wrapper" class="wrapper">
+    <h1 id="site-title">Contact-o-tron</h1>
+    <div class="content" role="main">
+      <%= yield %>
+    </div>
+  </div>
 
 </body>
 </html>
