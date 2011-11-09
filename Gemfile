@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'marples'
 gem 'mysql2'
 gem 'slimmer'
+gem 'stomp'
 
 group :development do
   gem 'nokogiri'
