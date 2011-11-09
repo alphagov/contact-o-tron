@@ -1,5 +1,6 @@
 Given /^some contacts exist$/ do
   @contacts = create_contacts
+  flush_notifications
 end
 
 Then /^I should be able to see all the contacts in alphabetical order$/ do
@@ -9,6 +10,7 @@ end
 
 Given /^a contact exists$/ do
   @contact = create_contact
+  flush_notifications
 end
 
 Then /^I should be able to see the contact's details$/ do
@@ -22,9 +24,9 @@ When /^I enter the details for a new contact$/ do
 end
 
 Then /^the contact should be created$/ do
-  contact = Contact.find_by_name! 'A new contact'
-  visit contact_path(contact)
-  check_contact_details_appear contact
+  @contact = Contact.find_by_name! 'A new contact'
+  visit contact_path(@contact)
+  check_contact_details_appear @contact
 end
 
 When /^I edit the contact's name$/ do

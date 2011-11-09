@@ -5,6 +5,7 @@ gem 'rails', '3.1.1'
 gem 'formtastic'
 gem 'inherited_resources'
 gem 'jquery-rails'
+gem 'marples'
 gem 'mysql2'
 
 group :development do
