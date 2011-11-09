@@ -3,6 +3,7 @@ source :rubygems
 gem 'rails', '3.1.1'
 
 gem 'formtastic'
+gem 'slimmer'
 gem 'inherited_resources'
 gem 'jquery-rails'
 gem 'marples'
