@@ -1,3 +1,4 @@
+<%= form.inputs do %>
 <%= form.input :name %>
 <%= form.input :postal_address %>
 
@@ -15,4 +16,11 @@
 <%= form.input :website_url %>
 <%= form.input :opening_hours %>
 
-<%= form.commit_button %>
+
+<div class="format-controls">
+  
+  <li><input class="update" name="commit" type="submit" value="Update Contact"></li>
+  
+</div>
+
+<% end %>
