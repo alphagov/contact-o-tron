@@ -29,7 +29,7 @@ def create_contact
 end
 
 def check_attribute_appears(name, value)
-  within :xpath, XPath.generate { |x| x.descendant(:p)[x.descendant(:strong)[XPath::HTML.content(name)]] } do
+  within :xpath, XPath.generate { |x| x.descendant(:dt)[XPath::HTML.content(name)].next_sibling(:dd) } do
     assert has_content? value if value.present?
   end
 end
