@@ -3,6 +3,7 @@
 <head>
   <title>Contact-o-tron</title>
   <%= stylesheet_link_tag '/stylesheets/formtastic.css', '/stylesheets/formtastic_changes.css' %>
+  <%= stylesheet_link_tag "/contacts-assets/stylesheets/contacts" %>
   <%= javascript_include_tag "application" %>
   <meta name="x-section-name" content="Contact-o-tron" />
   <meta name="x-section-link" content="contact-o-tron" />
@@ -16,7 +17,8 @@
     
     <nav class="admin-nav group" role="navigation">
     	<ul>
-        <li><%= link_to 'All contacts'.html_safe, contacts_path %></li>
+        <li><%= link_to 'All contacts', contacts_path %></li>
+        <li><%= link_to 'Create new contact', new_contact_path %></li>
     	</ul>
     </nav>
     
