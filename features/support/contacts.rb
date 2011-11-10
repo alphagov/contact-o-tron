@@ -7,7 +7,7 @@ def create_contacts
 end
 
 def check_contacts_appear_in_order(contacts)
-  assert_equal contacts.map(&:name).sort, all('#contacts a').map(&:text)
+  assert_equal contacts.map(&:name).sort, all('.contacts a').map(&:text)
 end
 
 def create_contact
