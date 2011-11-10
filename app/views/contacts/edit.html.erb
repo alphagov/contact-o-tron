@@ -1,5 +1,7 @@
-<h1>Editing contact “<%= @contact.name %>”</h1>
+<h2>Editing contact “<%= @contact.name %>”</h2>
 
-<%= semantic_form_for @contact do |form| %>
-  <%= render form %>
-<% end %>
+<div class="admin-section">
+  <%= semantic_form_for @contact do |form| %>
+    <%= render form %>
+  <% end %>
+</div>

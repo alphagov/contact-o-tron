@@ -1,25 +1,29 @@
-<h1><%= @contact.name %></h1>
+<h2>Viewing contact "<%= @contact.name %>"</h2>
 
-<dl>
+<div class="admin-section">
+  <div class="contact-card">
+    <dl>
 
-  <dt>Name:</dt>
-  <dd><%= @contact.name %></dd>
+      <dt>Name:</dt>
+      <dd><%= @contact.name %></dd>
 
-  <dt>Postal address:</dt>
-  <dd><%= @contact.postal_address %></dd>
+      <dt>Postal address:</dt>
+      <dd><%= @contact.postal_address %></dd>
 
-  <%= render @contact.phone_numbers %>
+      <%= render @contact.phone_numbers %>
 
-  <dt>Email address:</dt>
-  <dd><%= @contact.email_address %></dd>
+      <dt>Email address:</dt>
+      <dd><%= @contact.email_address %></dd>
   
-  <dt>Website URL:</dt>
-  <dd><%= @contact.website_url %></dd>
+      <dt>Website URL:</dt>
+      <dd><%= @contact.website_url %></dd>
 
-  <dt>Opening hours:</dt>
-  <dd><%= @contact.opening_hours %></dd>
+      <dt>Opening hours:</dt>
+      <dd><%= @contact.opening_hours %></dd>
     
-</dl>
+    </dl>
+  </div>
+</div>
 
 <div class="format-controls">
   

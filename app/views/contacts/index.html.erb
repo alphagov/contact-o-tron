@@ -1,7 +1,9 @@
-<h1>All contacts</h1>
+<h2>All contacts</h2>
 
-<ul class="contacts">
-  <% for contact in @contacts.in_alphabetical_order %>
-    <li><%= link_to contact.name, contact_path(contact) %></li>
-  <% end %>
-</ul>
+<div class="admin-section">
+  <ul class="contacts">
+    <% for contact in @contacts.in_alphabetical_order %>
+      <li><%= link_to contact.name, contact_path(contact) %></li>
+    <% end %>
+  </ul>
+</div>
