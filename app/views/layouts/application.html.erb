@@ -9,8 +9,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
+  <h1 id="site-title">Contact-o-tron</h1>
+  
   <div id="wrapper" class="wrapper">
-    <h1 id="site-title">Contact-o-tron</h1>
+    
+    <nav class="admin-nav group" role="navigation">
+    	<ul>
+        <li><%= link_to 'All contacts'.html_safe, contacts_path %></li>
+    	</ul>
+    </nav>
+    
     <div class="content" role="main">
       <%= yield %>
     </div>
