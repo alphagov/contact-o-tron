@@ -1,28 +1,32 @@
-<h1>Showing contact “<%= @contact.name %>”</h1>
+<h1><%= @contact.name %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @contact.name %>
-</p>
+<dl>
 
-<p>
-  <strong>Postal address:</strong>
-  <%= @contact.postal_address %>
-</p>
+  <dt>Name:</dt>
+  <dd><%= @contact.name %></dd>
 
-<%= render @contact.phone_numbers %>
+  <dt>Postal address:</dt>
+  <dd><%= @contact.postal_address %></dd>
 
-<p>
-  <strong>Email address:</strong>
-  <%= @contact.email_address %>
-</p>
+  <%= render @contact.phone_numbers %>
 
-<p>
-  <strong>Website URL:</strong>
-  <%= @contact.website_url %>
-</p>
+  <dt>Email address:</dt>
+  <dd><%= @contact.email_address %></dd>
+  
+  <dt>Website URL:</dt>
+  <dd><%= @contact.website_url %></dd>
 
-<p>
-  <strong>Opening hours:</strong>
-  <%= @contact.opening_hours %>
-</p>
+  <dt>Opening hours:</dt>
+  <dd><%= @contact.opening_hours %></dd>
+    
+</dl>
+
+<div class="format-controls">
+  
+  <ul>
+    <li>
+      <%= link_to 'Edit contact', edit_contact_path, :class => 'button' %>
+    </li>
+  </ul>
+  
+</div>
