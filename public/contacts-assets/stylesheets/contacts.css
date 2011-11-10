@@ -39,3 +39,28 @@
 textarea {
   height: 5em;
 }
+
+.phone-group {
+  border: 1px solid #bbb;
+  -webkit-border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  border-radius: 0.25em;
+  margin: 0 0 0.5em 0;
+  padding: 1em;
+  position: relative;
+}
+
+.phone-group input.delete-item {
+  margin-top: -1em;
+  position: absolute;
+  right: 1em;
+  top: 50%;
+}
+
+/* some stuff that should probably move to core-admin */
+
+.format-controls li {
+  display: inline-block;
+  margin: 0 1em;
+  vertical-align: top;
+}
