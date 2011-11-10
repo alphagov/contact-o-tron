@@ -19,7 +19,7 @@
 
 <div class="format-controls">
   
-  <li><input class="update" name="commit" type="submit" value="Update Contact"></li>
+  <li><%= tag :input, :class => form.object.new_record? ? 'create' : 'update', :name => 'commit', :type => :submit, :value => "#{form.object.new_record? ? 'Create' : 'Update'} Contact" %></li>
   
 </div>
 
