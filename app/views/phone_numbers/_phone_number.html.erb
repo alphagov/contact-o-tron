@@ -1,4 +1,2 @@
-<p>
-  <strong><%= phone_number.kind.humanize %> number<%= " (#{phone_number.label})" if phone_number.label.present? %>:</strong>
-  <%= phone_number.value %>
-</p>
+<dt><%= phone_number.kind.humanize %> number<%= " (#{phone_number.label})" if phone_number.label.present? %>:</dt>
+<dd><%= phone_number.value %></dd>

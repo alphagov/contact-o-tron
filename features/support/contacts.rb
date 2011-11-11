@@ -45,10 +45,7 @@ def check_contact_postal_address_appears(postal_address)
 end
 
 def check_contact_phone_number_appears(kind, label, value)
-  within :xpath, XPath.generate { |x| x.descendant(:p)[XPath::HTML.content(value)] } do
-    assert has_content? kind.humanize
-    assert has_content? label if label.present?
-  end
+  check_attribute_appears "#{kind.humanize} number#{" (#{label})" if label.present?}", value
 end
 
 def check_contact_phone_number_does_not_appear(kind, label, value)
