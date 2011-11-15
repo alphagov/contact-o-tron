@@ -22,7 +22,7 @@
 
 <div class="format-controls">
   
-  <li><%= link_to 'Cancel editing', contact_path, :class => 'button' %></li>
+  <li><%= link_to 'Cancel', form.object.new_record? ? contacts_path : contact_path(form.object), :class => 'button' %></li>
   <li><%= tag :input, :class => form.object.new_record? ? 'create' : 'update', :name => 'commit', :type => :submit, :value => "#{form.object.new_record? ? 'Create' : 'Update'} Contact" %></li>
   
 </div>
