@@ -9,10 +9,10 @@
       <%= phone_number.input :label %>
       <%= phone_number.input :value %>
       
-      <input type="submit" value="Delete" class="delete-item">
+      <%= form.submit 'Delete', :class => 'delete-item' %>
     </div>
   <% end %>
-  <input type="submit" value="Add new phone number" class="new-item">
+  <%= form.submit 'Add new phone number', :class => 'new-item' %>
 <% end %>
 
 <%= form.input :email_address %>
@@ -23,7 +23,7 @@
 <div class="format-controls">
   
   <li><%= link_to 'Cancel', form.object.new_record? ? contacts_path : contact_path(form.object), :class => 'button' %></li>
-  <li><%= tag :input, :class => form.object.new_record? ? 'create' : 'update', :name => 'commit', :type => :submit, :value => "#{form.object.new_record? ? 'Create' : 'Update'} Contact" %></li>
+  <li><%= form.submit "#{form.object.new_record? ? 'Create' : 'Update'} Contact", :class => form.object.new_record? ? 'create' : 'update' %></li>
   
 </div>
 
