@@ -16,8 +16,6 @@
         <%= render 'phone_numbers/form', :form => form %>
       </div>
     <% end %>
-
-    <%= form.submit 'Add new phone number', :class => 'new-item' %>
   <% end %>
 
   <%= form.input :email_address %>
@@ -33,6 +31,12 @@
 <%= javascript_tag do %>
   $(function () {
     var blankPhoneNumber = $('.phone-group.blank');
+    var button = $('<a>', {
+      text:   'Add new phone number',
+      class:  'button'
+    });
+
     blankPhoneNumber.hide();
+    button.insertBefore(blankPhoneNumber);
   });
 <% end %>
