@@ -57,6 +57,14 @@
         }
       });
 
+      checkbox.change(function () {
+        var deleted = checkbox.prop('checked');
+
+        checkbox.closest('.phone-group')
+          .find('.button.delete-item')
+          .text(deleted ? 'Keep' : 'Delete');
+      });
+
       $(this).hide();
       button.insertAfter(this);
     });
