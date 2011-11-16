@@ -69,14 +69,18 @@ def enter_contact_details(name)
   click_button 'Create Contact'
 end
 
+def click_update_contact_button
+  click_button 'Update Contact'
+end
+
 def update_contact_name(name)
   fill_in 'Name', :with => name
-  click_button 'Update Contact'
+  click_update_contact_button
 end
 
 def update_contact_postal_address(postal_address)
   fill_in 'Postal address', :with => postal_address
-  click_button 'Update Contact'
+  click_update_contact_button
 end
 
 def within_phone_number(kind, label, &block)
@@ -96,7 +100,7 @@ def update_contact_phone_number(kind, label, value)
     end
   end
 
-  click_button 'Update Contact'
+  click_update_contact_button
 end
 
 def add_contact_phone_number(kind, label, value)
@@ -106,7 +110,7 @@ def add_contact_phone_number(kind, label, value)
     end
   end
 
-  click_button 'Update Contact'
+  click_update_contact_button
 end
 
 def remove_contact_phone_number(kind, label, value)
@@ -116,5 +120,5 @@ def remove_contact_phone_number(kind, label, value)
     end
   end
 
-  click_button 'Update Contact'
+  click_update_contact_button
 end
