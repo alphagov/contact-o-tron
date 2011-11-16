@@ -48,9 +48,13 @@
     button.insertBefore(blankPhoneNumber);
 
     $('.phone-group .destroy').each(function () {
+      var checkbox = $(this).find('input:checkbox');
       var button = $('<a>', {
         text:   'Delete',
-        class:  'button delete-item'
+        class:  'button delete-item',
+        click:  function () {
+          checkbox.prop('checked', !checkbox.prop('checked')).change();
+        }
       });
 
       $(this).hide();
