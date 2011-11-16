@@ -1,0 +1,6 @@
+<%= form.input :kind, :collection => PhoneNumber::KINDS %>
+<%= form.input :label %>
+<%= form.input :value %>
+<%= form.input :id, :as => :hidden %>
+
+<%= form.submit 'Delete', :class => 'delete-item' %>
