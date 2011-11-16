@@ -6,7 +6,7 @@ class ContactsController < InheritedResources::Base
 
   private
     def mark_removed_phone_numbers_for_destruction
-      params[:contact][:phone_numbers_attributes].each_value do |attributes|
+      params[:contact][:phone_numbers_attributes].each do |attributes|
         attributes[:_destroy] = attributes[:id].present? && attributes.values_at(:kind, :label, :value).all?(&:blank?)
       end
     end

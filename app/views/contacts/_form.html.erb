@@ -3,14 +3,17 @@
   <%= form.input :postal_address %>
 
   <%= form.inputs 'Phone numbers' do %>
-    <%= form.semantic_fields_for :phone_numbers, phone_numbers_for(form.object) do |phone_number| %>
-      <div class="phone-group">
-        <%= phone_number.input :kind, :collection => PhoneNumber::KINDS %>
-        <%= phone_number.input :label %>
-        <%= phone_number.input :value %>
+    <% phone_numbers_for(form.object).each do |phone_number| %>
+      <%= semantic_fields_for 'contact[phone_numbers_attributes][]', phone_number, :index => nil do |phone_number| %>
+        <div class="phone-group">
+          <%= phone_number.input :kind, :collection => PhoneNumber::KINDS %>
+          <%= phone_number.input :label %>
+          <%= phone_number.input :value %>
+          <%= phone_number.input :id, :as => :hidden %>
 
-        <%= form.submit 'Delete', :class => 'delete-item' %>
-      </div>
+          <%= form.submit 'Delete', :class => 'delete-item' %>
+        </div>
+      <% end %>
     <% end %>
 
     <%= form.submit 'Add new phone number', :class => 'new-item' %>
