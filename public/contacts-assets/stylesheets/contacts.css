@@ -50,6 +50,10 @@ textarea {
   position: relative;
 }
 
+.phone-group.deleted {
+  background: red;
+}
+
 .phone-group input, .phone-group select {
   margin: 0 0 0.75em 0;
 }
