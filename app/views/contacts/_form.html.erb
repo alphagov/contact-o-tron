@@ -8,7 +8,7 @@
         <div class="phone-group">
           <%= render 'phone_numbers/form', :form => form %>
           <% unless form.object.new_record? %>
-            <li class="boolean input optional">
+            <li class="boolean input optional destroy">
               <label><input name="contact[phone_numbers_attributes][][_destroy]" type="checkbox" value="1"> Delete</label>
             </li>
           <% end %>
@@ -46,5 +46,9 @@
 
     blankPhoneNumber.hide();
     button.insertBefore(blankPhoneNumber);
+
+    $('.phone-group .destroy').each(function () {
+      $(this).hide();
+    });
   });
 <% end %>
