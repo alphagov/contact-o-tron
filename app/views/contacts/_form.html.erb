@@ -29,3 +29,10 @@
     <li><%= form.submit "#{form.object.new_record? ? 'Create' : 'Update'} Contact", :class => form.object.new_record? ? 'create' : 'update' %></li>
   </div>
 <% end %>
+
+<%= javascript_tag do %>
+  $(function () {
+    var blankPhoneNumber = $('.phone-group.blank');
+    blankPhoneNumber.hide();
+  });
+<% end %>
