@@ -15,8 +15,7 @@ development:
   database: contactotron_development
   pool: 5
   username: contactotron
-  password:
-  socket: /tmp/mysql.sock
+  password: contactotron
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -28,8 +27,7 @@ test:
   database: contactotron_test
   pool: 5
   username: contactotron
-  password:
-  socket: /tmp/mysql.sock
+  password: contactotron
 
 production:
   adapter: mysql2
@@ -38,5 +36,4 @@ production:
   database: contactotron_production
   pool: 5
   username: contactotron
-  password:
-  socket: /tmp/mysql.sock
+  password: contactotron
