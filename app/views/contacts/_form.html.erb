@@ -48,7 +48,13 @@
     button.insertBefore(blankPhoneNumber);
 
     $('.phone-group .destroy').each(function () {
+      var button = $('<a>', {
+        text:   'Delete',
+        class:  'button delete-item'
+      });
+
       $(this).hide();
+      button.insertAfter(this);
     });
   });
 <% end %>

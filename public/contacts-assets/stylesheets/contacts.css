@@ -54,7 +54,7 @@ textarea {
   margin: 0 0 0.75em 0;
 }
 
-.phone-group input.delete-item {
+.phone-group .delete-item {
   margin-top: -1em;
   position: absolute;
   right: 1em;
