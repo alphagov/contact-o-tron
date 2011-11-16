@@ -115,7 +115,7 @@ end
 def remove_contact_phone_number(kind, label, value)
   within_fieldset 'Phone numbers' do
     within_phone_number kind, label do
-      fill_in_phone_number '', '', ''
+      check 'Delete'
     end
   end
 
