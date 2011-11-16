@@ -33,7 +33,10 @@
     var blankPhoneNumber = $('.phone-group.blank');
     var button = $('<a>', {
       text:   'Add new phone number',
-      class:  'button'
+      class:  'button',
+      click:  function () {
+        blankPhoneNumber.clone().removeClass('blank').insertBefore(button).slideDown();
+      }
     });
 
     blankPhoneNumber.hide();
