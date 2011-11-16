@@ -89,7 +89,7 @@ end
 def fill_in_phone_number(kind, label, value)
   select kind, :from => 'Kind'
   fill_in 'Label', :with => label
-  fill_in 'Value', :with => value
+  fill_in 'Number', :with => value
 end
 
 def update_contact_phone_number(kind, label, value)
