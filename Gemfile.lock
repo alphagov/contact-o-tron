@@ -1,3 +1,11 @@
+GIT
+  remote: git@github.com:alphagov/slimmer.git
+  revision: cec555b41865f3718e02a25632e23c4be2895937
+  specs:
+    slimmer (0.9.0.beta)
+      nokogiri (~> 1.5.0)
+      rack (~> 1.3.5)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -123,8 +131,6 @@ GEM
       ffi (= 1.0.9)
       json_pure
       rubyzip
-    slimmer (0.8.0)
-      nokogiri
     sprockets (2.0.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -154,5 +160,5 @@ DEPENDENCIES
   mysql2
   nokogiri
   rails (= 3.1.1)
-  slimmer
+  slimmer!
   stomp
