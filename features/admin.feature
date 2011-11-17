@@ -13,18 +13,21 @@ Feature: Administering contacts
   Scenario: Create a contact
     When I enter the details for a new contact
     Then the contact should be created
+      And the API should show the new contact
       And the rest of the system should be notified that the contact has been created
 
   Scenario: Edit a contact's name
     Given a contact exists
     When I edit the contact's name
     Then the contact's name should change
+      And the API should show the updated name
       And the rest of the system should be notified that the contact has been updated
 
   Scenario: Edit a contact's postal address
     Given a contact exists
     When I edit the contact's postal address
     Then the contact's postal address should change
+      And the API should show the updated postal address
       And the rest of the system should be notified that the contact has been updated
 
   Scenario: Edit a contact's phone number
