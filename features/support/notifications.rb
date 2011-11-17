@@ -2,18 +2,19 @@ def flush_notifications
   FakeTransport.instance.flush
 end
 
-def latest_notification
+def latest_notification_with_destination(destination)
   notifications = FakeTransport.instance.notifications
-  assert_not_empty notifications
-  notifications.last
+  notifications.reverse.detect { |n| n[:destination] == destination }
 end
 
 def check_create_notification(contact)
-  assert_equal '/topic/marples.contactotron.contacts.created', latest_notification[:destination]
-  assert_equal contact.id, latest_notification[:message][:contact][:id]
+  notification = latest_notification_with_destination '/topic/marples.contactotron.contacts.created'
+  assert_not_nil notification
+  assert_equal contact.id, notification[:message][:contact][:id]
 end
 
 def check_update_notification(contact)
-  assert_equal '/topic/marples.contactotron.contacts.updated', latest_notification[:destination]
-  assert_equal contact.id, latest_notification[:message][:contact][:id]
+  notification = latest_notification_with_destination '/topic/marples.contactotron.contacts.updated'
+  assert_not_nil notification
+  assert_equal contact.id, notification[:message][:contact][:id]
 end
