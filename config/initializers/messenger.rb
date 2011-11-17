@@ -9,9 +9,11 @@ unless Rails.env.test?
     PhusionPassenger.on_event(:starting_worker_process) do |forked|
       if forked
         Messenger.transport = Stomp::Client.new failover_uri
+        ActiveRecord::Base.marples_transport = Stomp::Client.new failover_uri
       end
     end
   else
     Messenger.transport = Stomp::Client.new failover_uri
+    ActiveRecord::Base.marples_transport = Stomp::Client.new failover_uri
   end
 end
