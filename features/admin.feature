@@ -34,16 +34,19 @@ Feature: Administering contacts
     Given a contact exists
     When I edit the contact's phone number
     Then the contact's phone number should change
+      And the API should show the updated phone number
       And the rest of the system should be notified that the contact has been updated
 
   Scenario: Add a phone number to a contact
     Given a contact exists
     When I add a phone number to the contact
     Then the contact's details should include the phone number
+      And the API should show the new phone number
       And the rest of the system should be notified that the contact has been updated
 
   Scenario: Remove a phone number from a contact
     Given a contact exists
     When I remove a phone number from the contact
     Then the contact's details should not include the phone number
+      And the API should not show the old phone number
       And the rest of the system should be notified that the contact has been updated
