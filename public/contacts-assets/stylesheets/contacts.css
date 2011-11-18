@@ -50,10 +50,6 @@ textarea {
   position: relative;
 }
 
-.phone-group.deleted {
-  background: red;
-}
-
 .phone-group input, .phone-group select {
   margin: 0 0 0.75em 0;
 }
@@ -63,6 +59,17 @@ textarea {
   position: absolute;
   right: 1em;
   top: 50%;
+}
+
+.phone-group.deleted {
+  background-color: #E8E7E2;
+  border-color: #CCC;
+  height: 1em;
+  overflow: hidden;
+}
+
+.phone-group.deleted input, .phone-group.deleted select, .phone-group.deleted label {
+  opacity: 0.25;
 }
 
 /* some stuff that should probably move to core-admin */
