@@ -5,21 +5,25 @@
   <%= form.inputs 'Phone numbers' do %>
     <% form.object.phone_numbers.each do |phone_number| %>
       <%= semantic_fields_for 'contact[phone_numbers_attributes][]', phone_number, :index => nil do |form| %>
-        <div class="phone-group">
+        <li class="phone-group">
+          <ul>
           <%= render 'phone_numbers/form', :form => form %>
           <% unless form.object.new_record? %>
             <li class="boolean input optional destroy">
               <label><input name="contact[phone_numbers_attributes][][_destroy]" type="checkbox" value="1"> Delete</label>
             </li>
           <% end %>
-        </div>
+          </ul>
+        </li>
       <% end %>
     <% end %>
 
     <%= semantic_fields_for 'contact[phone_numbers_attributes][]', PhoneNumber.new, :index => nil do |form| %>
-      <div class="phone-group blank">
-        <%= render 'phone_numbers/form', :form => form %>
-      </div>
+      <li class="phone-group blank">
+        <ul>
+          <%= render 'phone_numbers/form', :form => form %>
+        </ul>
+      </li>
     <% end %>
   <% end %>
 
@@ -27,12 +31,10 @@
   <%= form.input :website_url %>
   <%= form.input :opening_hours %>
 
-  <li class="format-controls">
-    <ul>
-      <li><%= link_to 'Cancel', form.object.new_record? ? contacts_path : contact_path(form.object), :class => 'button' %></li>
-      <li><%= form.submit "#{form.object.new_record? ? 'Create' : 'Update'} Contact", :class => form.object.new_record? ? 'create' : 'update' %></li>
-    </ul>
-  </li>
+  <div class="format-controls">
+    <li><%= link_to 'Cancel', form.object.new_record? ? contacts_path : contact_path(form.object), :class => 'button' %></li>
+    <li><%= form.submit "#{form.object.new_record? ? 'Create' : 'Update'} Contact", :class => form.object.new_record? ? 'create' : 'update' %></li>
+  </div>
 <% end %>
 
 <%= javascript_tag do %>
@@ -42,12 +44,12 @@
       text:   'Add new phone number',
       class:  'button',
       click:  function () {
-        blankPhoneNumber.clone().removeClass('blank').insertBefore(button).slideDown();
+        blankPhoneNumber.clone().removeClass('blank').insertBefore('.add-item').slideDown();
       }
     });
 
     blankPhoneNumber.hide();
-    button.insertBefore(blankPhoneNumber);
+    button.insertBefore(blankPhoneNumber).wrap('<li class="add-item">');
 
     $('.phone-group .destroy').each(function () {
       var checkbox = $(this).find('input:checkbox');
