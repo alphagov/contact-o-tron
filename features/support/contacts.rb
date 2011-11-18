@@ -84,7 +84,7 @@ def update_contact_postal_address(postal_address)
 end
 
 def within_phone_number(kind, label, &block)
-  within :xpath, XPath.generate { |x| x.descendant(:div)[XPath::HTML.select('Kind', :selected => kind) && XPath::HTML.fillable_field('Label', :with => label)] }, &block
+  within :xpath, XPath.generate { |x| x.descendant(:li)[x.attr(:class).contains('phone-group')][XPath::HTML.select('Kind', :selected => kind) && XPath::HTML.fillable_field('Label', :with => label)] }, &block
 end
 
 def fill_in_phone_number(kind, label, value)
@@ -105,7 +105,7 @@ end
 
 def add_contact_phone_number(kind, label, value)
   within_fieldset 'Phone numbers' do
-    within :xpath, './/div[last()]' do
+    within :xpath, './/li[contains(@class, "phone-group")][last()]' do
       fill_in_phone_number kind, label, value
     end
   end
