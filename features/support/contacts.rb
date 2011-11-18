@@ -49,7 +49,7 @@ def check_contact_phone_number_appears(kind, label, value)
 end
 
 def check_contact_phone_number_does_not_appear(kind, label, value)
-  assert !has_selector?(:xpath, XPath.generate { |x| x.descendant(:p)[XPath::HTML.content(value)] })
+  assert !has_selector?(:xpath, XPath.generate { |x| x.descendant(:dd)[XPath::HTML.content(value)] })
 end
 
 def check_contact_details_appear(contact)
