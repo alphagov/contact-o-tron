@@ -40,14 +40,20 @@ textarea {
   height: 7em;
 }
 
-.phone-group {
+form.formtastic .phone-group {
+  background-color: rgba(226, 223, 215, 1);
   border: 1px solid #bbb;
   -webkit-border-radius: 0.25em;
   -moz-border-radius: 0.25em;
   border-radius: 0.25em;
-  margin: 0 0 0.5em 0;
+  margin: 0 0 1em 0;
   padding: 1em;
   position: relative;
+}
+
+form.formtastic .phone-group ul {
+  margin: 0;
+  padding: 0;
 }
 
 .phone-group input, .phone-group select {
@@ -55,21 +61,23 @@ textarea {
 }
 
 .phone-group .delete-item {
-  margin-top: -1em;
   position: absolute;
   right: 1em;
-  top: 50%;
+  top: 1em;
 }
 
-.phone-group.deleted {
-  background-color: #E8E7E2;
+form.formtastic .phone-group.deleted {
   border-color: #CCC;
-  height: 1em;
+  height: 2em;
   overflow: hidden;
 }
 
 .phone-group.deleted input, .phone-group.deleted select, .phone-group.deleted label {
   opacity: 0.25;
+}
+
+form.formtastic .add-item {
+  text-align: right;
 }
 
 /* some stuff that should probably move to core-admin */
