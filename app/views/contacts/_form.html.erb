@@ -61,7 +61,7 @@
         var deleted = checkbox.prop('checked');
 
         checkbox.closest('.phone-group')
-          .toggleClass('deleted', deleted)
+          [deleted ? 'addClass' : 'removeClass']('deleted', 'normal')
           .find('.button.delete-item')
           .text(deleted ? 'Undo' : 'Delete');
       });
