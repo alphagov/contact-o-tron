@@ -27,10 +27,12 @@
   <%= form.input :website_url %>
   <%= form.input :opening_hours %>
 
-  <div class="format-controls">
-    <li><%= link_to 'Cancel', form.object.new_record? ? contacts_path : contact_path(form.object), :class => 'button' %></li>
-    <li><%= form.submit "#{form.object.new_record? ? 'Create' : 'Update'} Contact", :class => form.object.new_record? ? 'create' : 'update' %></li>
-  </div>
+  <li class="format-controls">
+    <ul>
+      <li><%= link_to 'Cancel', form.object.new_record? ? contacts_path : contact_path(form.object), :class => 'button' %></li>
+      <li><%= form.submit "#{form.object.new_record? ? 'Create' : 'Update'} Contact", :class => form.object.new_record? ? 'create' : 'update' %></li>
+    </ul>
+  </li>
 <% end %>
 
 <%= javascript_tag do %>
