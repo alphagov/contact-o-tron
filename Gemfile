@@ -2,6 +2,11 @@ source :rubygems
 
 gem 'rails', '3.1.1'
 
+group :passenger_compatibility do
+  gem 'rack', '1.3.5'
+  gem 'rake', '0.9.2'
+end
+
 gem 'formtastic'
 gem 'inherited_resources'
 gem 'jquery-rails'
