@@ -58,6 +58,7 @@ ContactOTron::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   
+  config.slimmer.asset_host = Plek.current.find('assets')
   config.action_controller.asset_host = Proc.new { |source|
     source =~ /contacts-assets/ ? nil : Plek.current.find('assets')
   }
