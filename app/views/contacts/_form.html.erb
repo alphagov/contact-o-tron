@@ -44,12 +44,12 @@
       text:   'Add new phone number',
       class:  'button',
       click:  function () {
-        blankPhoneNumber.clone().removeClass('blank').insertBefore('.add-item').slideDown();
+        blankPhoneNumber.clone().removeClass('blank').insertBefore(button.closest('li')).slideDown();
       }
     });
 
     blankPhoneNumber.hide();
-    button.insertBefore(blankPhoneNumber).wrap('<li class="add-item">');
+    button.insertBefore(blankPhoneNumber).wrap($('<li>').addClass('add-item'));
 
     $('.phone-group .destroy').each(function () {
       var checkbox = $(this).find('input:checkbox');
