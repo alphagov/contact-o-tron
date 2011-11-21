@@ -80,6 +80,10 @@ form.formtastic .add-item {
   text-align: right;
 }
 
+form.formtastic .add-item .button {
+  margin-bottom: 0.25em;
+}
+
 /* some stuff that should probably move to core-admin */
 
 .format-controls li {
