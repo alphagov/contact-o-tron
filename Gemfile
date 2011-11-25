@@ -13,7 +13,7 @@ gem 'inherited_resources'
 gem 'jquery-rails'
 gem 'marples'
 gem 'mysql2'
-gem 'slimmer', :git => 'git@github.com:alphagov/slimmer.git'
+gem 'slimmer'
 gem 'stomp'
 
 group :development do
