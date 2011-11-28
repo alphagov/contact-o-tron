@@ -60,8 +60,6 @@ task :scrape => :environment do
     URI.parse(scrape_text(node_set)).normalize.to_s
   end
 
-  ActiveRecord::Base.instantiate_observers # avoid LoadError from ContactObserver
-
   organisations.each do |uri, contact_details|
     puts "Scraping #{uri}..."
     attributes = {}
