@@ -1,3 +1,12 @@
+GIT
+  remote: git@github.com:alphagov/marples.git
+  revision: bd8869ed15a33be9ea8eff940c37c4b1631dd2be
+  specs:
+    marples (1.0.3)
+      activesupport
+      i18n
+      null_logger
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -78,10 +87,6 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    marples (1.0.2)
-      activesupport
-      i18n
-      null_logger
     mime-types (1.17.2)
     multi_json (1.0.3)
     mysql2 (0.3.7)
@@ -154,7 +159,7 @@ DEPENDENCIES
   formtastic
   inherited_resources
   jquery-rails
-  marples
+  marples!
   mysql2
   nokogiri
   plek
