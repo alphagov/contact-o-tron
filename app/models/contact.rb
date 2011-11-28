@@ -13,7 +13,15 @@ class Contact < ActiveRecord::Base
     contact_url self, :host => URI.parse(Plek.current.find('contactotron')).host
   end
 
-  marples_client.payload_for self do |contact|
-    contact.to_xml :methods => :uri
+  # Customise the payload lazily, so that the environment (e.g. Cucumber) gets
+  # the opportunity to configure the transport before the client is created.
+  def self.marples_client
+    return @marples_client unless @marples_client.nil?
+
+    @marples_client = super.tap do |client|
+      client.payload_for self do |contact|
+        contact.to_xml :methods => :uri
+      end
+    end
   end
 end
