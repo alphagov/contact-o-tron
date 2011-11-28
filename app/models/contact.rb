@@ -12,4 +12,8 @@ class Contact < ActiveRecord::Base
   def uri
     contact_url self, :host => URI.parse(Plek.current.find('contactotron')).host
   end
+
+  marples_client.payload_for self do |contact|
+    contact.to_xml :methods => :uri
+  end
 end
