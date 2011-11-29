@@ -20,7 +20,7 @@ class Contact < ActiveRecord::Base
 
     @marples_client = super.tap do |client|
       client.payload_for self do |contact|
-        contact.to_xml :except => :id, :methods => :uri
+        contact.to_xml :except => contact.attribute_names, :methods => :uri
       end
     end
   end
