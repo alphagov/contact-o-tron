@@ -1,3 +1,7 @@
+Given /^we're using the GDS-SSO stub strategy$/ do
+  User.create!(:name => "Fake User", :email => 'fake@user.com', :version => 1, :uid => '12345')
+end
+
 Given /^some contacts exist$/ do
   @contacts = create_contacts
   flush_notifications
