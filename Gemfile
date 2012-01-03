@@ -14,6 +14,7 @@ else
   gem 'gds-sso', :git => 'git@github.com:alphagov/gds-sso.git'
 end
 
+gem 'aws-ses', :require => 'aws/ses'
 gem 'plek'
 gem 'formtastic'
 gem 'inherited_resources'

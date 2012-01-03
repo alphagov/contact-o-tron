@@ -62,4 +62,7 @@ ContactOTron::Application.configure do
   config.action_controller.asset_host = Proc.new { |source|
     source =~ /contacts-assets/ ? nil : Plek.current.find('assets')
   }
+
+  config.action_mailer.default_url_options = { :host => Plek.current.find('contacts') }
+  config.action_mailer.delivery_method = :ses
 end
