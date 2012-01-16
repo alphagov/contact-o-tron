@@ -84,6 +84,8 @@ GEM
     ffi (1.0.9)
     formtastic (2.0.2)
       rails (~> 3.0)
+    gds-warmup-controller (0.0.2)
+      rails (>= 3.0.0)
     gherkin (2.6.2)
       json (>= 1.4.6)
     has_scope (0.5.1)
@@ -195,6 +197,7 @@ DEPENDENCIES
   factory_girl_rails
   formtastic
   gds-sso!
+  gds-warmup-controller
   inherited_resources
   jquery-rails
   marples

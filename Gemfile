@@ -15,6 +15,8 @@ end
 
 gem 'exception_notification'
 
+gem 'gds-warmup-controller'
+
 gem 'aws-ses', :require => 'aws/ses'
 gem 'plek'
 gem 'formtastic'
