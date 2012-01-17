@@ -10,7 +10,7 @@ end
 if ENV['BUNDLE_DEV']
   gem 'gds-sso', :path => '../gds-sso'
 else
-  gem 'gds-sso', :git => 'git@github.com:alphagov/gds-sso.git'
+  gem 'gds-sso', '~> 0.4.1'
 end
 
 gem 'exception_notification'
