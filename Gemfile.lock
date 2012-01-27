@@ -161,7 +161,7 @@ GEM
       ffi (~> 1.0.9)
       multi_json (~> 1.0.4)
       rubyzip
-    slimmer (1.1.21)
+    slimmer (1.1.27)
       json
       nokogiri (~> 1.5.0)
       null_logger
