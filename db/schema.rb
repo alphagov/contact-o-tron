@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111208211521) do
+ActiveRecord::Schema.define(:version => 20120730104840) do
 
   create_table "contacts", :force => true do |t|
     t.string   "name",           :null => false
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(:version => 20111208211521) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "permissions"
+    t.boolean  "remotely_signed_out", :default => false
   end
 
 end
