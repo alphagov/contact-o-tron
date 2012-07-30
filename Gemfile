@@ -7,11 +7,13 @@ group :passenger_compatibility do
   gem 'rake', '0.9.2'
 end
 
+gem 'gds-api-adapters', '0.2.2'
 if ENV['BUNDLE_DEV']
-  gem 'gds-sso', :path => '../gds-sso'
+  gem 'gds-sso', path: '../gds-sso'
 else
-  gem 'gds-sso', '~> 0.4.1'
+  gem 'gds-sso', '~> 1.2.0'
 end
+
 
 gem 'exception_notification'
 
@@ -22,10 +24,8 @@ gem 'plek'
 gem 'formtastic'
 gem 'inherited_resources'
 gem 'jquery-rails'
-gem 'marples'
 gem 'mysql2'
-gem 'slimmer'
-gem 'stomp'
+gem 'slimmer', '1.1.47'
 
 group :development do
   gem 'nokogiri'
